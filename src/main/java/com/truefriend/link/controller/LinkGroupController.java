@@ -1,7 +1,7 @@
 package com.truefriend.link.controller;
 
-import com.truefriend.link.dao.FriendGroupDAO;
-import com.truefriend.link.entity.FriendGroup;
+import com.truefriend.link.dao.LinkGroupDAO;
+import com.truefriend.link.entity.LinkGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,18 +12,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/group")
-public class FriendGroupController {
+public class LinkGroupController {
 
     @Autowired
-    private FriendGroupDAO friendGroupDAO;
+    private LinkGroupDAO linkGroupDAO;
 
     @GetMapping("/all")
-    public List<FriendGroup> getAllGroups(){
-        return friendGroupDAO.findAll();
+    public List<LinkGroup> getAllGroups(){
+        return linkGroupDAO.findAll();
     }
 
     @GetMapping("/{id}")
-    public FriendGroup getGroup(@PathVariable long id){
-        return friendGroupDAO.getOne(id);
+    public LinkGroup getGroup(@PathVariable long id){
+        return linkGroupDAO.getOne(id);
     }
 }
